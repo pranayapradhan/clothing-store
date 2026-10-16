@@ -1,0 +1,14 @@
+{
+  "name": "clothing-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack clothing e-commerce application with real-time customer support chat",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
