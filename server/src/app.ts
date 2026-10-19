@@ -16,6 +16,9 @@ import wishlistRoutes from "./routes/wishlist.routes.js";
 import orderRoutes from "./routes/order.routes.js";
 import dashboardRoutes from "./routes/dashboard.routes.js";
 import adminImageRoutes from "./routes/admin-image.routes.js";
+import adminOrderRoutes from "./routes/admin-order.routes.js";
+import adminCustomerRoutes from "./routes/admin-customer.routes.js";
+import chatRoutes from "./routes/chat.routes.js";
 
 const app = express();
 
@@ -60,6 +63,9 @@ app.use("/api/v1/wishlist", wishlistRoutes);
 app.use("/api/v1/orders", orderRoutes);
 app.use("/api/v1/admin/dashboard", dashboardRoutes);
 app.use("/api/v1/admin/images", adminImageRoutes);
+app.use("/api/v1/admin/orders", adminOrderRoutes);
+app.use("/api/v1/admin/customers", adminCustomerRoutes);
+app.use("/api/v1/chat", chatRoutes);
 
 app.get("/api/v1/health", (_req, res) => {
   res.status(200).json({

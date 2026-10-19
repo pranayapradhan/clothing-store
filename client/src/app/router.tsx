@@ -28,10 +28,12 @@ import AdminCreateProductPage from "../pages/admin/products/AdminCreateProductPa
 import AdminCategoriesPage from "../pages/admin/categories/AdminCategoriesPage";
 import AdminCreateCategoryPage from "../pages/admin/categories/AdminCreateCategoryPage";
 import AdminEditCategoryPage from "../pages/admin/categories/AdminEditCategoryPage";
-
-
-
-
+import AdminOrdersPage from "../pages/admin/orders/AdminOrdersPage";
+import AdminOrderDetailsPage from "../pages/admin/orders/AdminOrderDetailsPage";
+import AdminCustomersPage from "../pages/admin/customers/AdminCustomersPage";
+import AdminCustomerDetailsPage from "../pages/admin/customers/AdminCustomerDetailsPage";
+import CustomerChatPage from "../pages/customer/CustomerChatPage";
+import AdminChatPage from "../pages/admin/chat/AdminChatPage";
 
 export const router = createBrowserRouter([
   {
@@ -89,6 +91,10 @@ export const router = createBrowserRouter([
             path: "/account/orders/:id",
             element: <OrderConfirmationPage />,
           },
+          {
+            path: "/chat",
+            element: <CustomerChatPage />,
+          },
         ],
       },
     ],
@@ -105,37 +111,57 @@ export const router = createBrowserRouter([
             element: <AdminDashboardPage />,
           },
           {
-path: "/admin/products",
-element: <AdminProductsPage />,
-},
+            path: "/admin/products",
+            element: <AdminProductsPage />,
+          },
           {
-path: "/admin/products/new",
-element: <AdminCreateProductPage />,
-},
-{
-  path: "/admin/products/:id/edit",
-  element: <AdminEditProductPage />,
-},
-{
-  path: "/admin/inventory",
-  element: <AdminInventoryPage />,
-},
-{
-path: "/admin/inventory/:variantId",
-element: <AdminInventoryManagePage />,
-},
-{
-path: "/admin/categories",
-element: <AdminCategoriesPage />,
-},
-{
-  path: "/admin/categories/new",
-  element: <AdminCreateCategoryPage />,
-},
-{
-  path: "/admin/categories/:id/edit",
-  element: <AdminEditCategoryPage />,
-},
+            path: "/admin/products/new",
+            element: <AdminCreateProductPage />,
+          },
+          {
+            path: "/admin/products/:id/edit",
+            element: <AdminEditProductPage />,
+          },
+          {
+            path: "/admin/inventory",
+            element: <AdminInventoryPage />,
+          },
+          {
+            path: "/admin/inventory/:variantId",
+            element: <AdminInventoryManagePage />,
+          },
+          {
+            path: "/admin/categories",
+            element: <AdminCategoriesPage />,
+          },
+          {
+            path: "/admin/categories/new",
+            element: <AdminCreateCategoryPage />,
+          },
+          {
+            path: "/admin/categories/:id/edit",
+            element: <AdminEditCategoryPage />,
+          },
+          {
+            path: "/admin/orders",
+            element: <AdminOrdersPage />,
+          },
+          {
+            path: "/admin/orders/:id",
+            element: <AdminOrderDetailsPage />,
+          },
+          {
+            path: "/admin/customers",
+            element: <AdminCustomersPage />,
+          },
+          {
+            path: "/admin/customers/:id",
+            element: <AdminCustomerDetailsPage />,
+          },
+          {
+            path: "/admin/chat",
+            element: <AdminChatPage />,
+          },
         ],
       },
     ],

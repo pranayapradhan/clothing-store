@@ -9,6 +9,8 @@ import { Wishlist } from "./Wishlist.js";
 import { WishlistItem } from "./WishlistItem.js";
 import {Order} from "./Order.js";
 import {OrderItem} from "./OrderItem.js";
+import { Conversation } from "./Conversation.js";
+import { ChatMessage } from "./ChatMessage.js";
 
 Category.belongsTo(Category, {
   foreignKey: "parentId",
@@ -161,6 +163,38 @@ as: "variant",
 });
 
 
+User.hasOne(Conversation, {
+  foreignKey: "customerId",
+  as: "conversation",
+});
+
+Conversation.belongsTo(User, {
+  foreignKey: "customerId",
+  as: "customer",
+});
+
+Conversation.hasMany(ChatMessage, {
+  foreignKey: "conversationId",
+  as: "messages",
+});
+
+ChatMessage.belongsTo(Conversation, {
+  foreignKey: "conversationId",
+  as: "conversation",
+});
+
+User.hasMany(ChatMessage, {
+  foreignKey: "senderId",
+  as: "sentMessages",
+});
+
+ChatMessage.belongsTo(User, {
+  foreignKey: "senderId",
+  as: "sender",
+});
+
+
+
 export {
   User,
   Category,
@@ -173,4 +207,6 @@ export {
   WishlistItem,
   Order,
   OrderItem,  
+  Conversation, 
+  ChatMessage,
 };
